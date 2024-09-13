@@ -52,12 +52,23 @@ void	AForm::beSigned(Bureaucrat& loyal) {
 		is_signed = true;
 }
 
+void	AForm::execute(Bureaucrat const & executor) const {
+	if (is_signed == false)
+		throw AForm::ExecuteUnsignedForm();
+	else
+		throw AForm::GradeTooLowException();
+}
+
 const char*	AForm::GradeTooHighException::what() const throw() {
 	return ("AForm::Grade is to high");
 }
 
 const char*	AForm::GradeTooLowException::what() const throw() {
 	return ("AForm::Grade is to Low");
+}
+
+const char* AForm::ExecuteUnsignedForm::what() const throw() {
+	return ("AForm::Form is unsigned 😭");
 }
 
 std::ostream& operator<<(std::ostream& os, const AForm& point) {
