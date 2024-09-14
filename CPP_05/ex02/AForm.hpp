@@ -1,6 +1,8 @@
 #ifndef AFORM_HPP
 # define AFORM_HPP
 
+#include <fstream>
+
 #include "Bureaucrat.hpp"
 
 class	AForm {
@@ -19,7 +21,7 @@ public:
 	int					getGradeE()	const ;
 
 	void				beSigned(Bureaucrat& loyal);
-	void				execute(Bureaucrat const & executor) const;
+	virtual void		execute(Bureaucrat const & executor) const = 0;
 
 	class	GradeTooHighException : public std::exception {
 		public:
@@ -32,7 +34,7 @@ public:
 	class	ExecuteUnsignedForm : public std::exception {
 		public:
 			const char*	what()	const throw();
-	}
+	};
 
 private:
 

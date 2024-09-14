@@ -1,14 +1,14 @@
-NAME = Form
+NAME = AForm
 
-HEADERS = 	Bureaucrat.hpp \
-			Form.hpp \
+HEADERS = 	AForm.hpp \
+			Bureaucrat.hpp \
 			RobotomyRequestForm.hpp \
 			PresidentialPardonForm.hpp \
 			ShrubberyCreationForm.hpp
 
 SRCS =  main.cpp \
-		Bureaucrat.cpp \
 		AForm.cpp \
+		Bureaucrat.cpp \
 		RobotomyRequestForm.cpp \
 		PresidentialPardonForm.cpp \
 		ShrubberyCreationForm.cpp

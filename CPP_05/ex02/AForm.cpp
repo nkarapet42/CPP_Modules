@@ -55,7 +55,7 @@ void	AForm::beSigned(Bureaucrat& loyal) {
 void	AForm::execute(Bureaucrat const & executor) const {
 	if (is_signed == false)
 		throw AForm::ExecuteUnsignedForm();
-	else
+	if (executor.getGrade() > grade_e)
 		throw AForm::GradeTooLowException();
 }
 
