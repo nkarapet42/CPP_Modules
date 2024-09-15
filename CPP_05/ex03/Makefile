@@ -1,6 +1,7 @@
-NAME = AForm
+NAME = Intern
 
 HEADERS = 	AForm.hpp \
+			Intern.hpp \
 			Bureaucrat.hpp \
 			RobotomyRequestForm.hpp \
 			PresidentialPardonForm.hpp \
@@ -8,6 +9,7 @@ HEADERS = 	AForm.hpp \
 
 SRCS =  main.cpp \
 		AForm.cpp \
+		Intern.cpp \
 		Bureaucrat.cpp \
 		RobotomyRequestForm.cpp \
 		PresidentialPardonForm.cpp \

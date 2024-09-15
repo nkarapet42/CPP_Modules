@@ -1,10 +1,10 @@
 #include "Bureaucrat.hpp"
+#include "Intern.hpp"
 #include "ShrubberyCreationForm.hpp"
 #include "RobotomyRequestForm.hpp"
 #include "PresidentialPardonForm.hpp"
 #include <cstdlib>
 #include <ctime>
-
 
 int	main(void) {
 	
@@ -13,84 +13,63 @@ int	main(void) {
 		std::cout << std::endl;
 		std::cout << "\033[35m***********************************************\033[0m" << std::endl;
 		std::cout << std::endl;
-		try
-		{
-			ShrubberyCreationForm	form("Tree");
-			Bureaucrat				Bot("Bot", 35);
+		Intern	someRandomIntern;
+		AForm*	rrf;
 
-			form.beSigned(Bot);
-			form.execute(Bot);
-		}
-		catch(const std::exception& e)
-		{
-			std::cerr << e.what() << '\n';
-		}
-		std::cout << std::endl;
-		std::cout << "\033[35m***********************************************\033[0m" << std::endl;
-		std::cout << std::endl;
+		rrf = someRandomIntern.makeForm("robotomy request", "Bender");
+		if (rrf)	
+			std::cout << *rrf << std::endl;
+		delete rrf;
 	}
+	std::cout << std::endl;
+	std::cout << "\033[35m***********************************************\033[0m" << std::endl;
+	std::cout << std::endl;
 
 	{
 		std::cout << std::endl;
 		std::cout << "\033[35m***********************************************\033[0m" << std::endl;
 		std::cout << std::endl;
-		try
-		{
-			RobotomyRequestForm		form;
-			Bureaucrat				Bot("Bot", 35);
+		Intern	someRandomIntern;
+		AForm*	rrf;
 
-			form.beSigned(Bot);
-			form.execute(Bot);
-		}
-		catch(const std::exception& e)
-		{
-			std::cerr << e.what() << '\n';
-		}
-		std::cout << std::endl;
-		std::cout << "\033[35m***********************************************\033[0m" << std::endl;
-		std::cout << std::endl;
+		rrf = someRandomIntern.makeForm("presidential pardon", "Tramp");	
+		if (rrf)
+			std::cout << *rrf << std::endl;
+		delete rrf;
 	}
+	std::cout << std::endl;
+	std::cout << "\033[35m***********************************************\033[0m" << std::endl;
+	std::cout << std::endl;
 
 	{
 		std::cout << std::endl;
 		std::cout << "\033[35m***********************************************\033[0m" << std::endl;
 		std::cout << std::endl;
-		try
-		{
-			RobotomyRequestForm		form;
-			Bureaucrat				Bot("Bot", 34);
+		Intern	someRandomIntern;
+		AForm*	rrf;
 
-			form.beSigned(Bot);
-			form.execute(Bot);
-		}
-		catch(const std::exception& e)
-		{
-			std::cerr << e.what() << '\n';
-		}
-		std::cout << std::endl;
-		std::cout << "\033[35m***********************************************\033[0m" << std::endl;
-		std::cout << std::endl;
+		rrf = someRandomIntern.makeForm("shrubbery creation", "Lolita");	
+		if (rrf)
+			std::cout << *rrf << std::endl;
+		delete rrf;
 	}
+	std::cout << std::endl;
+	std::cout << "\033[35m***********************************************\033[0m" << std::endl;
+	std::cout << std::endl;
 
 	{
 		std::cout << std::endl;
 		std::cout << "\033[35m***********************************************\033[0m" << std::endl;
 		std::cout << std::endl;
-		try
-		{
-			PresidentialPardonForm	form;
-			Bureaucrat				Bot("Bot", 4);
+		Intern	someRandomIntern;
+		AForm*	rrf;
 
-			form.beSigned(Bot);
-			std::cout << form << std::endl;
-			form.execute(Bot);
-		}
-		catch(const std::exception& e)
-		{
-			std::cerr << e.what() << '\n';
-		}
-		std::cout << std::endl;
-		std::cout << "\033[35m***********************************************\033[0m" << std::endl;
-		std::cout << std::endl;
+		rrf = someRandomIntern.makeForm("Go away", "Pisciner");	
+		if (rrf)
+			std::cout << *rrf << std::endl;
+		delete rrf;
 	}
+	std::cout << std::endl;
+	std::cout << "\033[35m***********************************************\033[0m" << std::endl;
+	std::cout << std::endl;
 }

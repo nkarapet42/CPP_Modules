@@ -1,4 +1,5 @@
 #include "RobotomyRequestForm.hpp"
+#include <cstdlib>
 
 RobotomyRequestForm::RobotomyRequestForm() : AForm("RobotomyRequestForm", 72, 45), target("Liparid") {
 	std::cout << "Default constructor of RobotomyRequestForm called" << std::endl;
