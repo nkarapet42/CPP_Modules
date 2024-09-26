@@ -15,12 +15,12 @@ Fixed::Fixed(const float value) {
 }
 
 Fixed::Fixed(const Fixed& other) {
-	std::cout << "Copy constructor called" << std::endl;
+	// std::cout << "Copy constructor called" << std::endl;
 	*this = other;
 }
 
 Fixed& Fixed::operator=(const Fixed& other) {
-	std::cout << "Copy assignment operator called" << std::endl;
+	// std::cout << "Copy assignment operator called" << std::endl;
 	if (this != &other)
 		this->value = other.getRawBits();
 	return *this;
@@ -28,7 +28,7 @@ Fixed& Fixed::operator=(const Fixed& other) {
 
 
 Fixed::~Fixed() {
-	//std::cout << "Destructor called" << std::endl;
+	// std::cout << "Destructor called" << std::endl;
 }
 
 int	Fixed::getRawBits( void ) const {
@@ -73,28 +73,28 @@ bool	Fixed::operator!=(const Fixed& other) const {
 	return (this->getRawBits() != other.getRawBits());
 }
 
-Fixed	Fixed::operator+(const Fixed& other) {
+const Fixed	Fixed::operator+(const Fixed& other) const {
 	Fixed	result;
 
 	result.setRawBits(this->getRawBits() + other.getRawBits());
 	return (result);
 }
 
-Fixed	Fixed::operator-(const Fixed& other) {
+const Fixed	Fixed::operator-(const Fixed& other) const {
 	Fixed	result;
 
 	result.setRawBits(this->getRawBits() - other.getRawBits());
 	return (result);
 }
 
-Fixed	Fixed::operator*(const Fixed& other) {
+const Fixed	Fixed::operator*(const Fixed& other) const {
 	Fixed	result;
 
 	result.setRawBits(this->getRawBits() * other.getRawBits() >> this->bite);
 	return (result);
 }
 
-Fixed	Fixed::operator/(const Fixed& other) {
+const Fixed	Fixed::operator/(const Fixed& other) const {
 	Fixed	result;
 
 	result.setRawBits((this->getRawBits() << this->bite) / other.getRawBits());
@@ -106,7 +106,7 @@ Fixed &Fixed::operator++() {
 	return *this;
 }
 
-Fixed Fixed::operator++(int) {
+const Fixed Fixed::operator++(int) {
 	Fixed temp = *this;
 
 	++(*this);
@@ -118,7 +118,7 @@ Fixed &Fixed::operator--() {
 	return *this;
 }
 
-Fixed Fixed::operator--(int) {
+const Fixed Fixed::operator--(int) {
 	Fixed temp = *this;
 	
 	--(*this);
