@@ -69,7 +69,7 @@ static double stringToDouble(const std::string& str) {
 	double result;
 
 	ss >> result;
-	if (ss.fail())
+	if (ss.fail() || !ss.eof())
 		return -1;
 	return result;
 }
@@ -130,7 +130,11 @@ void    BitcoinExchange::exchange()   {
 			std::cout << "Error: no info for date " << data << std::endl;
 			continue;
 		}
-		std::string     value = line.substr(delim_position + 2);
+		std::string value;
+		if (delim_position + 2 < line.length())
+			value = line.substr(delim_position + 2);
+		else
+		 	value = "Invalid";
 		try {
 			double  price = stringToDouble(value);
 			if (price < 0 || price > 1000) {
